@@ -3,13 +3,16 @@ import { business } from "@/config/business";
 
 export function Price() {
   return (
-    <section id="price" className="scroll-mt-28 px-4 py-10 sm:scroll-mt-24 sm:px-6 sm:py-20">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
+    <section
+      id="price"
+      className="scroll-mt-20 px-4 py-9 sm:scroll-mt-24 sm:px-6 sm:py-20"
+    >
+      <div className="mx-auto flex max-w-6xl flex-col gap-5 sm:flex-row sm:items-start sm:justify-between sm:gap-12">
         <div className="max-w-md">
-          <h2 className="font-display text-[clamp(1.35rem,3vw,2rem)] text-silver-100">
+          <h2 className="font-display text-[clamp(1.2rem,4.8vw,2rem)] text-silver-100">
             Visiting charge
           </h2>
-          <p className="mt-3 text-silver-500">
+          <p className="mt-2 text-sm text-silver-500 sm:mt-3 sm:text-[1.0625rem]">
             Clear pricing before the technician arrives. Labour depends on the
             repair.
           </p>
@@ -19,7 +22,10 @@ export function Price() {
           title="Service visit"
           figure={`Rs ${business.visitingChargeInr}`}
           fields={[
-            { label: "Visiting charge", value: `Rs ${business.visitingChargeInr}` },
+            {
+              label: "Visiting charge",
+              value: `Rs ${business.visitingChargeInr}`,
+            },
             { label: "Labour", value: "Extra, based on the repair" },
           ]}
           footer={
@@ -28,7 +34,7 @@ export function Price() {
         />
       </div>
       {business.labourPolicyConfirmed ? null : (
-        <p className="mx-auto mt-6 max-w-6xl text-sm text-silver-500">
+        <p className="mx-auto mt-4 max-w-6xl text-sm text-silver-500 sm:mt-6">
           Labour is extra, based on the repair.
         </p>
       )}

@@ -8,24 +8,27 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="scroll-mt-28 px-4 py-10 sm:scroll-mt-24 sm:px-6 sm:py-20">
+    <section
+      id="faq"
+      className="scroll-mt-20 px-4 py-9 sm:scroll-mt-24 sm:px-6 sm:py-20"
+    >
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-display text-[clamp(1.35rem,3vw,2rem)] text-silver-100">
+        <h2 className="font-display text-[clamp(1.2rem,4.8vw,2rem)] text-silver-100">
           Questions
         </h2>
-        <div className="mt-8 divide-y divide-ink-700 border-y border-ink-700">
+        <div className="mt-5 divide-y divide-ink-700 border-y border-ink-700 sm:mt-8">
           {business.faq.map((item, index) => {
             const isOpen = open === index;
             return (
               <div key={item.q}>
                 <button
                   type="button"
-                  className="flex min-h-14 w-full items-center justify-between gap-4 py-4 text-left text-silver-100"
+                  className="flex min-h-12 w-full items-center justify-between gap-3 py-3.5 text-left text-[0.95rem] text-silver-100 sm:min-h-14 sm:gap-4 sm:py-4 sm:text-[1.0625rem]"
                   aria-expanded={isOpen}
                   onClick={() => setOpen(isOpen ? null : index)}
                 >
                   <span className="max-w-[50ch]">{item.q}</span>
-                  <span className="text-lime-400" aria-hidden>
+                  <span className="shrink-0 text-lime-400" aria-hidden>
                     {isOpen ? "−" : "+"}
                   </span>
                 </button>
@@ -38,7 +41,9 @@ export function Faq() {
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className="overflow-hidden"
                     >
-                      <p className="max-w-[58ch] pb-5 text-silver-500">{item.a}</p>
+                      <p className="max-w-[58ch] pb-4 text-sm leading-relaxed text-silver-500 sm:pb-5 sm:text-[1.0625rem]">
+                        {item.a}
+                      </p>
                     </motion.div>
                   ) : null}
                 </AnimatePresence>

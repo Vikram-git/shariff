@@ -8,7 +8,6 @@ import { business } from "@/config/business";
 
 export function Hero() {
   const [offset, setOffset] = useState(0);
-  const areasLine = `Doorstep service in ${business.serviceAreas.slice(0, -1).join(", ")} and ${business.serviceAreas.at(-1)}.`;
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -34,15 +33,14 @@ export function Hero() {
   };
 
   return (
-    <section className="relative isolate min-h-[100svh] overflow-hidden">
-      {/* Full-bleed 3D — no pointer capture on mobile so scroll/taps work */}
+    <section className="relative isolate min-h-[72svh] overflow-hidden md:min-h-[100svh]">
       <div className="absolute inset-0 z-0 pointer-events-none md:pointer-events-auto">
         <Hero3D />
       </div>
 
-      {/* Stronger scrim on mobile (vertical); side fade on desktop */}
+      {/* Mobile: clear top band for copy, softer bottom. Desktop: left fade */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(5,8,9,0.55)_0%,rgba(5,8,9,0.72)_42%,rgba(5,8,9,0.92)_100%)] md:bg-[linear-gradient(90deg,rgba(5,8,9,0.82)_0%,rgba(5,8,9,0.45)_38%,transparent_72%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(5,8,9,0.78)_0%,rgba(5,8,9,0.55)_38%,rgba(5,8,9,0.88)_100%)] md:bg-[linear-gradient(90deg,rgba(5,8,9,0.82)_0%,rgba(5,8,9,0.45)_38%,transparent_72%)]"
         aria-hidden
       />
 
@@ -51,29 +49,32 @@ export function Hero() {
         style={watermarkStyle}
       />
 
-      <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-6xl items-end px-4 pb-[calc(5.5rem+env(safe-area-inset-bottom))] pt-24 md:items-center md:px-6 md:pb-28 md:pt-28">
+      <div className="relative z-10 mx-auto flex min-h-[72svh] max-w-6xl items-start px-5 pb-10 pt-7 md:min-h-[100svh] md:items-center md:px-6 md:pb-28 md:pt-28">
         <div className="w-full max-w-xl text-left">
-          <h1 className="font-display text-[clamp(1.45rem,6.2vw,2.9rem)] leading-[1.22] text-silver-100">
+          <p className="mb-2.5 text-[0.8rem] text-lime-400 md:hidden">
+            Doorstep repair · Avadi & nearby
+          </p>
+          <h1 className="font-display text-[clamp(1.28rem,5.2vw,2.9rem)] leading-[1.3] text-silver-100">
             {business.taglines.hero}
           </h1>
-          <p className="mt-3 max-w-[36ch] text-[0.95rem] text-silver-300 sm:mt-4 sm:text-[1.0625rem]">
+          <p className="mt-3 max-w-[34ch] text-[0.92rem] leading-relaxed text-silver-300 sm:mt-4 sm:text-[1.0625rem]">
             {business.taglines.heroSub}
           </p>
-          <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
-            <Button href="#book" className="w-full min-h-12 sm:w-auto">
+          <div className="mt-5 flex w-full flex-col gap-2.5 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
+            <Button href="#book" className="min-h-11 w-full sm:min-h-12 sm:w-auto">
               Book Now
             </Button>
             <Button
               href={`tel:${business.phone.tel}`}
               variant="outline"
-              className="w-full min-h-12 sm:w-auto"
+              className="min-h-11 w-full sm:min-h-12 sm:w-auto"
             >
-              <span className="sm:hidden">Call {business.phone.display}</span>
-              <span className="hidden sm:inline">Call {business.phone.display}</span>
+              Call {business.phone.display}
             </Button>
           </div>
-          <p className="mt-4 max-w-[42ch] text-sm text-silver-500 sm:mt-5">
-            {areasLine}
+          <p className="mt-4 hidden max-w-[42ch] text-sm text-silver-500 md:mt-5 md:block">
+            Doorstep service in {business.serviceAreas.slice(0, -1).join(", ")}{" "}
+            and {business.serviceAreas.at(-1)}.
           </p>
         </div>
       </div>

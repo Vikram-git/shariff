@@ -103,7 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main
           id="main"
-          className="flex-1 overflow-x-hidden pb-[calc(4.75rem+env(safe-area-inset-bottom))] sm:pb-0"
+          className="flex-1 overflow-x-hidden pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0"
           tabIndex={-1}
         >
           {children}

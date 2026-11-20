@@ -22,31 +22,37 @@ const chips: Chip[] = [
 
 export function SymptomPicker() {
   return (
-    <section className="px-4 py-10 sm:px-6 sm:py-12">
+    <section className="py-8 sm:px-6 sm:py-12">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-display text-[clamp(1.2rem,2.5vw,1.6rem)] text-silver-100">
-          What&apos;s wrong?
-        </h2>
-        <p className="mt-2 max-w-[42ch] text-sm text-silver-500">
-          Tap a symptom to jump to booking with that problem ready.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
+        <div className="px-4 sm:px-0">
+          <h2 className="font-display text-[clamp(1.15rem,4.5vw,1.6rem)] text-silver-100">
+            What&apos;s wrong?
+          </h2>
+          <p className="mt-2 max-w-[42ch] text-sm text-silver-500">
+            Tap a symptom to start booking.
+          </p>
+        </div>
+
+        {/* Horizontal scroll on mobile — less wrap clutter */}
+        <ul className="mt-5 flex gap-2 overflow-x-auto px-4 pb-1 scrollbar-none sm:mt-6 sm:flex-wrap sm:overflow-visible sm:px-0">
           {chips.map((chip) => (
-            <li key={`${chip.appliance}-${chip.label}`}>
+            <li key={`${chip.appliance}-${chip.label}`} className="shrink-0">
               <a
                 href={buildBookHref({
                   appliance: chip.appliance,
                   problem: chip.problem,
                 })}
-                className="inline-flex min-h-12 items-center rounded-[var(--radius-control)] border border-ink-700 px-3.5 text-sm text-silver-300 no-underline transition-colors hover:border-lime-400 hover:text-silver-100 sm:min-h-11"
+                className="inline-flex min-h-11 items-center rounded-[var(--radius-control)] border border-ink-700 bg-ink-800/40 px-3.5 text-sm text-silver-300 no-underline active:border-lime-400 active:text-silver-100"
               >
                 {chip.label}
               </a>
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm text-silver-500">
-          Not listed? Book for any {business.services.map((s) => s.name.toLowerCase()).join(", ")}.
+
+        <p className="mt-4 px-4 text-sm text-silver-500 sm:px-0">
+          Not listed? We still cover{" "}
+          {business.services.map((s) => s.name.toLowerCase()).join(", ")}.
         </p>
       </div>
     </section>
