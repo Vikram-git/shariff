@@ -38,9 +38,9 @@ export function Hero() {
         <Hero3D />
       </div>
 
-      {/* Mobile: clear top band for copy, softer bottom. Desktop: left fade */}
+      {/* Keep copy readable; let the 3D chamber breathe on the right */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(5,8,9,0.78)_0%,rgba(5,8,9,0.55)_38%,rgba(5,8,9,0.88)_100%)] md:bg-[linear-gradient(90deg,rgba(5,8,9,0.82)_0%,rgba(5,8,9,0.45)_38%,transparent_72%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(5,8,9,0.72)_0%,rgba(5,8,9,0.42)_36%,rgba(5,8,9,0.88)_100%)] md:bg-[linear-gradient(90deg,rgba(5,8,9,0.78)_0%,rgba(5,8,9,0.35)_34%,transparent_68%)]"
         aria-hidden
       />
 

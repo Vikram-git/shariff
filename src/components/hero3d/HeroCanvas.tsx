@@ -59,7 +59,7 @@ export function HeroCanvas({
       <Canvas
         aria-hidden
         dpr={[1, 1.75]}
-        camera={{ position: [0.2, 0.45, 5.6], fov: 42, near: 0.1, far: 50 }}
+        camera={{ position: [0.4, 0.55, 5.4], fov: 46, near: 0.1, far: 50 }}
         gl={{
           antialias: !lowPower,
           alpha: true,

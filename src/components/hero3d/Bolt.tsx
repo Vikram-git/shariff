@@ -3,7 +3,7 @@
 import { useFrame } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import { ExtrudeGeometry, Shape, type Mesh } from "three";
-import { BOLT_EMISSIVE } from "./materials";
+import { BOLT_EMISSIVE, LIME } from "./materials";
 
 type BoltProps = {
   reducedMotion: boolean;
@@ -23,15 +23,15 @@ function createBoltGeometry() {
   shape.closePath();
 
   return new ExtrudeGeometry(shape, {
-    depth: 0.08,
+    depth: 0.12,
     bevelEnabled: true,
-    bevelThickness: 0.01,
-    bevelSize: 0.01,
+    bevelThickness: 0.02,
+    bevelSize: 0.015,
     bevelSegments: 1,
   });
 }
 
-/** Bolt pulses above the stage spotlight. */
+/** Jumpy cartoon lightning bolt. */
 export function Bolt({ reducedMotion, lowPower, intro }: BoltProps) {
   const mesh = useRef<Mesh>(null);
   const geometry = useMemo(() => createBoltGeometry(), []);
@@ -40,30 +40,29 @@ export function Bolt({ reducedMotion, lowPower, intro }: BoltProps) {
     const m = mesh.current;
     if (!m) return;
     const t = reducedMotion ? 0 : state.clock.elapsedTime;
+    const hop = Math.abs(Math.sin(t * 3.2)) * 0.55;
     m.position.set(
-      -0.85 + Math.sin(t * 0.35) * 0.1,
-      1.15 + Math.sin(t * 1.4) * 0.07,
-      0.95,
+      Math.sin(t * 1.1) * 2.1,
+      1.1 + hop,
+      Math.cos(t * 1.1) * 0.9,
     );
-    m.rotation.set(0.2, t * 0.55, -0.4);
-    m.scale.setScalar((0.3 + intro * 0.25) * (lowPower ? 0.9 : 1));
+    m.rotation.set(0.3, t * 3, Math.sin(t * 4) * 0.4);
+    const pulse = 0.45 + Math.sin(t * 6) * 0.12;
+    m.scale.setScalar(pulse * intro * (lowPower ? 0.9 : 1.15));
 
     const mat = m.material as import("three").MeshStandardMaterial;
-    if (mat) {
-      mat.emissiveIntensity = lowPower
-        ? 0.5
-        : 0.7 + Math.sin(t * 2.8) * 0.25;
-    }
+    if (mat) mat.emissiveIntensity = 1.2 + Math.sin(t * 8) * 0.5;
   });
 
   return (
     <mesh ref={mesh} geometry={geometry} castShadow>
       <meshStandardMaterial
-        color={BOLT_EMISSIVE}
+        color={LIME}
         emissive={BOLT_EMISSIVE}
-        emissiveIntensity={0.75}
-        metalness={0.2}
-        roughness={0.35}
+        emissiveIntensity={1.2}
+        metalness={0.1}
+        roughness={0.4}
+        toneMapped={false}
       />
     </mesh>
   );
