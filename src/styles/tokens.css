@@ -1,0 +1,39 @@
+/**
+ * Brand colour tokens — sampled from the logo.
+ * Do not add, tint, or substitute any other colour.
+ * The only non-brand colour is --alert (form errors).
+ */
+
+:root {
+  --ink-950: #050809;
+  --ink-900: #0a0e0f;
+  --ink-800: #0f1517;
+  --ink-700: #1b2225;
+  --slate-600: #2c3640;
+
+  --lime-200: #cbf764;
+  --lime-300: #b7ef82;
+  --lime-400: #98da55;
+  --lime-500: #7dbf29;
+  --emerald-400: #61d767;
+
+  --silver-100: #f1f3f2;
+  --silver-300: #cfcace;
+  --silver-500: #9d9ea2;
+  --mint-50: #daf7f5;
+
+  --alert: #ff6b5e;
+
+  --radius-control: 6px;
+  --radius-sticker: 14px;
+
+  --font-display: var(--font-michroma), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+
+  --gradient-page: radial-gradient(
+    60% 50% at 20% 0%,
+    var(--slate-600) 0%,
+    var(--ink-900) 62%
+  );
+  --gradient-wordmark: linear-gradient(180deg, var(--lime-300), var(--lime-500));
+}

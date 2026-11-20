@@ -1,0 +1,116 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme inline {
+  --color-ink-950: var(--ink-950);
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+  --color-slate-600: var(--slate-600);
+  --color-lime-200: var(--lime-200);
+  --color-lime-300: var(--lime-300);
+  --color-lime-400: var(--lime-400);
+  --color-lime-500: var(--lime-500);
+  --color-emerald-400: var(--emerald-400);
+  --color-silver-100: var(--silver-100);
+  --color-silver-300: var(--silver-300);
+  --color-silver-500: var(--silver-500);
+  --color-mint-50: var(--mint-50);
+  --color-alert: var(--alert);
+
+  --font-display: var(--font-michroma), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-control: 6px;
+  --radius-sticker: 14px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    background-color: var(--ink-950);
+    background-image: var(--gradient-page);
+    background-attachment: scroll;
+    color: var(--silver-100);
+    font-family: var(--font-body);
+    font-size: clamp(1.0625rem, 0.5vw + 1rem, 1.125rem);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: color-mix(in srgb, var(--lime-400) 22%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--lime-400);
+    outline-offset: 3px;
+  }
+
+  a {
+    touch-action: manipulation;
+  }
+
+  button,
+  [role="button"],
+  input,
+  select,
+  textarea {
+    touch-action: manipulation;
+    font-size: 1rem; /* prevents iOS zoom on focus */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--lime-400) 35%, transparent);
+    color: var(--silver-100);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient-wordmark {
+    background-image: var(--gradient-wordmark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .bg-wordmark {
+    background-image: var(--gradient-wordmark);
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}

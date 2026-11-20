@@ -1,0 +1,13 @@
+---
+description: Shariff Appliances Service site guardrails
+alwaysApply: true
+---
+
+- Colours come only from `src/styles/tokens.css`. Never add, tint or substitute a colour. The only non-brand colour is `--alert`, for form errors.
+- Fonts: Michroma for display, Barlow for body. Sentence case. No ALL-CAPS labels, no eyebrow text.
+- No identical-card grids, no fade-up-on-scroll, no hover-lift on every element, no emoji, no arrows in button text.
+- Unprompted motion is limited to the hero assembly and the watermark drift. All other motion responds to user action.
+- Business facts and copy come from `src/config/business.ts`. Never invent hours, prices, reviews, warranties or claims. Use `TODO_CONFIRM`.
+- The WhatsApp redirect is opened synchronously in the submit handler and must never depend on the API call.
+- Logo is rendered unmodified: no recolour, stretch or added effects.
+- Every phase ends with `pnpm build` passing and a short list of what changed.

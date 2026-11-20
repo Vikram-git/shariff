@@ -32,6 +32,13 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# local assets / tooling
+/logo.jpeg
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 
 # vercel
 .vercel
