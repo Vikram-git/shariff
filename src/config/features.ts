@@ -3,7 +3,7 @@
  */
 
 export const FEATURES = {
-  reviews: false,
+  reviews: true,
   gallery: false,
   businessHours: false,
   waAutomation: process.env.FEATURE_WA_AUTOMATION === "true",

@@ -8,6 +8,7 @@ import { Controller, useForm } from "react-hook-form";
 import { ServiceSticker } from "@/components/ServiceSticker";
 import { Button } from "@/components/ui/Button";
 import { Field, Select, TextArea, TextInput } from "@/components/ui/Field";
+import { WashSpinner } from "@/components/ui/WashSpinner";
 import { business, type ServiceId } from "@/config/business";
 import { generateBookingRef } from "@/lib/booking-ref";
 import {
@@ -535,7 +536,15 @@ export function BookingForm() {
             className="min-h-12 w-full sm:w-auto"
             disabled={isSubmitting}
           >
-            Book Now
+            {isSubmitting ? (
+              <WashSpinner
+                size="sm"
+                label="Booking"
+                className="gap-2 py-0 text-ink-950 [&_span]:text-ink-950 [&_svg]:text-ink-950"
+              />
+            ) : (
+              "Book Now"
+            )}
           </Button>
         )}
       </div>

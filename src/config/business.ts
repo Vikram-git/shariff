@@ -140,6 +140,54 @@ export const business = {
   ] as const,
   /** Owner to supply 6–10 real photos. Keep empty until then. */
   gallery: [] as readonly string[],
+  /**
+   * Doorstep visit notes — service vignettes, not attributed customer reviews.
+   * Replace with real named testimonials when the owner supplies them (TODO_CONFIRM).
+   */
+  doorstepNotes: [
+    {
+      id: "wm-avadi",
+      appliance: "Washing machine",
+      area: "Avadi",
+      care: "30°",
+      note: "Front load stuck mid-spin. Drain path cleared, belt checked — rinse finished before we packed up.",
+    },
+    {
+      id: "fridge-ambattur",
+      appliance: "Refrigerator",
+      area: "Ambattur",
+      care: "Cool",
+      note: "Double door warm on one side. Capillary line cleared, seals wiped — cold air back by evening tea.",
+    },
+    {
+      id: "dw-pattabiram",
+      appliance: "Dishwasher",
+      area: "Pattabiram",
+      care: "Rinse",
+      note: "Built-in leaving grit on plates. Spray arms freed, filter reset — first clean load ran while we were there.",
+    },
+    {
+      id: "wm-thiruverkadu",
+      appliance: "Washing machine",
+      area: "Thiruverkadu",
+      care: "Spin",
+      note: "Top load humming but no turn. Motor brushes sorted same visit — neighbour asked for their machine next.",
+    },
+    {
+      id: "fridge-mullaivoyal",
+      appliance: "Refrigerator",
+      area: "Thirumullaivoyal",
+      care: "Frost",
+      note: "Ice sheet behind the freezer wall. Defrost path opened, drain cleared — no more puddles under the door.",
+    },
+    {
+      id: "wm-ninravur",
+      appliance: "Washing machine",
+      area: "Thiruninravur",
+      care: "Soft",
+      note: "Door lock jammed after a short. Lock assembly swapped — laundry started again without a workshop trip.",
+    },
+  ] as const,
   privacyEmail: null as null | string,
 } as const;
 

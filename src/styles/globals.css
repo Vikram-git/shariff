@@ -113,4 +113,101 @@
   .scrollbar-none::-webkit-scrollbar {
     display: none;
   }
+
+  .animate-wash-spin {
+    animation: wash-spin 1.1s linear infinite;
+  }
+
+  .animate-wash-spin-slow {
+    animation: wash-spin 4.5s linear infinite;
+  }
+
+  .animate-wash-spin-rev {
+    animation: wash-spin-rev 2.4s linear infinite;
+  }
+
+  .animate-wash-wobble {
+    animation: wash-wobble 2.8s ease-in-out infinite;
+  }
+
+  .animate-wash-bubble {
+    animation: wash-bubble 2.2s ease-in infinite;
+  }
+
+  .animate-wash-ripple {
+    animation: wash-ripple 2.8s ease-out infinite;
+  }
+
+  .animate-wash-pulse {
+    animation: wash-pulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes wash-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wash-spin-rev {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  @keyframes wash-wobble {
+    0%,
+    100% {
+      transform: rotate(-1.2deg) translateY(0);
+    }
+    50% {
+      transform: rotate(1.2deg) translateY(2px);
+    }
+  }
+
+  @keyframes wash-bubble {
+    0% {
+      transform: translateY(10px) scale(0.7);
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.55;
+    }
+    100% {
+      transform: translateY(-28px) scale(1.05);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wash-ripple {
+    0% {
+      transform: scale(0.72);
+      opacity: 0.45;
+    }
+    100% {
+      transform: scale(1.15);
+      opacity: 0;
+    }
+  }
+
+  @keyframes wash-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-wash-spin,
+    .animate-wash-spin-slow,
+    .animate-wash-spin-rev,
+    .animate-wash-wobble,
+    .animate-wash-bubble,
+    .animate-wash-ripple,
+    .animate-wash-pulse {
+      animation: none;
+    }
+  }
 }

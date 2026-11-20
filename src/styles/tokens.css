@@ -1,6 +1,5 @@
 /**
- * Brand colour tokens — sampled from the logo.
- * Do not add, tint, or substitute any other colour.
+ * Brand colour tokens — soft pastel greens (not neon).
  * The only non-brand colour is --alert (form errors).
  */
 
@@ -11,16 +10,17 @@
   --ink-700: #1b2225;
   --slate-600: #2c3640;
 
-  --lime-200: #cbf764;
-  --lime-300: #b7ef82;
-  --lime-400: #98da55;
-  --lime-500: #7dbf29;
-  --emerald-400: #61d767;
+  /* Pastel green scale */
+  --lime-200: #e4f2d4;
+  --lime-300: #cfe5b8;
+  --lime-400: #b4d49a;
+  --lime-500: #95bc7a;
+  --emerald-400: #a3c9b0;
 
   --silver-100: #f1f3f2;
   --silver-300: #cfcace;
   --silver-500: #9d9ea2;
-  --mint-50: #daf7f5;
+  --mint-50: #eaf6e8;
 
   --alert: #ff6b5e;
 

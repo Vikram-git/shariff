@@ -18,9 +18,9 @@ export default function Home() {
       <Price />
       <HowItWorks />
       <Areas />
+      <Reviews />
       <Booking />
       <Faq />
-      <Reviews />
     </>
   );
 }

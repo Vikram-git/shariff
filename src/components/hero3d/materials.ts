@@ -6,8 +6,8 @@ export const SILVER: MeshStandardMaterialParameters = {
   roughness: 0.35,
 };
 
-export const EDGE = "#98DA55";
-export const BOLT_EMISSIVE = "#CBF764";
+export const EDGE = "#B4D49A";
+export const BOLT_EMISSIVE = "#CFE5B8";
 export const AMBIENT = "#2C3640";
-export const LIME = "#98DA55";
-export const EMERALD = "#61D767";
+export const LIME = "#B4D49A";
+export const EMERALD = "#A3C9B0";
