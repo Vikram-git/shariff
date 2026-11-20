@@ -8,8 +8,11 @@ export function Areas() {
     >
       <div className="mx-auto max-w-6xl">
         <h2 className="font-display text-[clamp(1.2rem,4.8vw,2rem)] text-silver-100">
-          Areas we cover
+          Appliance service areas near Avadi
         </h2>
+        <p className="mt-2 max-w-[48ch] text-sm text-silver-500 sm:text-[1.0625rem]">
+          Doorstep repair across west Chennai neighbourhoods.
+        </p>
         <ul className="mt-5 grid grid-cols-2 gap-2 sm:mt-8 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
           {business.serviceAreas.map((area) => {
             const isBase = area === business.baseArea;

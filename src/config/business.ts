@@ -22,10 +22,10 @@ export const business = {
   gst: null as null,
   visitingChargeInr: 200,
   taglines: {
-    hero: "Expert care for every home appliance",
-    heroSub: "Fast fixes at your doorstep",
-    services: "Your Home Appliances, Running Like New.",
-    booking: "Trusted Doorstep Repairs You Can Count On.",
+    hero: "Appliance service in Avadi, Chennai",
+    heroSub: "Washing machine, fridge and dishwasher repair at your door",
+    services: "Washing machine, refrigerator and dishwasher service",
+    booking: "Book doorstep appliance service on WhatsApp",
   },
   serviceAreas: [
     "Ambattur",
@@ -118,24 +118,28 @@ export const business = {
   labourPolicyConfirmed: false,
   faq: [
     {
-      q: "Which areas do you cover?",
-      a: "Ambattur, Avadi, Thirumullaivoyal, Pattabiram, Thiruninravur and Thiruverkadu. Not on the list? Message us on WhatsApp and we will tell you if we can come.",
-    },
-    {
-      q: "What is the visiting charge?",
-      a: "Rs 200. Labour is extra, based on the repair.",
+      q: "Do you offer appliance service in Avadi and Chennai?",
+      a: "Yes. Shariff Appliances Service provides doorstep appliance service from Avadi across Ambattur, Thirumullaivoyal, Pattabiram, Thiruninravur and Thiruverkadu.",
     },
     {
       q: "Which appliances do you repair?",
-      a: "Washing machines, refrigerators and dishwashers. All types of service.",
+      a: "Washing machines, refrigerators and dishwashers. Front load, top load, single door, double door and built-in types.",
     },
     {
-      q: "How do I book?",
-      a: "Fill the booking form on this site. It opens WhatsApp with your details ready to send.",
+      q: "What is the visiting charge for appliance repair?",
+      a: "Visiting charge is Rs 200. Labour is extra, based on the repair, and is told after checking the appliance.",
     },
     {
-      q: "How do I reach you?",
-      a: "Call or WhatsApp 99625 06148.",
+      q: "Which areas do you cover for doorstep service?",
+      a: "Ambattur, Avadi, Thirumullaivoyal, Pattabiram, Thiruninravur and Thiruverkadu. Not on the list? Message us on WhatsApp and we will tell you if we can come.",
+    },
+    {
+      q: "How do I book washing machine or fridge service?",
+      a: "Fill the booking form on this site. It opens WhatsApp with your details ready to send, or call 99625 06148.",
+    },
+    {
+      q: "How do I reach Shariff Appliances Service?",
+      a: "Call or WhatsApp 99625 06148. We are based at Kumaran Nagar, Kamaraj Nagar, Avadi, Chennai.",
     },
   ] as const,
   /** Owner to supply 6–10 real photos. Keep empty until then. */

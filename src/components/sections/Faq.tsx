@@ -14,8 +14,11 @@ export function Faq() {
     >
       <div className="mx-auto max-w-6xl">
         <h2 className="font-display text-[clamp(1.2rem,4.8vw,2rem)] text-silver-100">
-          Questions
+          Appliance service questions
         </h2>
+        <p className="mt-2 max-w-[48ch] text-sm text-silver-500 sm:text-[1.0625rem]">
+          Common questions about doorstep repair in Avadi and nearby Chennai.
+        </p>
         <div className="mt-5 divide-y divide-ink-700 border-y border-ink-700 sm:mt-8">
           {business.faq.map((item, index) => {
             const isOpen = open === index;

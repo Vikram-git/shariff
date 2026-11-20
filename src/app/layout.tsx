@@ -7,6 +7,8 @@ import { SiteHeader } from "@/components/sections/SiteHeader";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { business } from "@/config/business";
+import { seo } from "@/config/seo";
+import { getSiteUrl } from "@/lib/site-url";
 import "@/styles/globals.css";
 
 const michroma = Michroma({
@@ -25,39 +27,40 @@ const barlow = Barlow({
   preload: true,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-const description = `${business.taglines.hero} Doorstep appliance repair in ${business.serviceAreas.join(", ")}. Visiting charge Rs ${business.visitingChargeInr}.`;
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${business.name} · Doorstep repair in Avadi, Chennai`,
-    template: `%s · ${business.shortName}`,
+    default: seo.titleDefault,
+    template: seo.titleTemplate,
   },
-  description,
+  description: seo.description,
   applicationName: business.name,
   authors: [{ name: business.name }],
   creator: business.name,
-  keywords: [
-    "appliance repair Avadi",
-    "washing machine repair Chennai",
-    "refrigerator service Ambattur",
-    "dishwasher repair",
-    "doorstep appliance service",
-    ...business.serviceAreas.map((a) => `appliance repair ${a}`),
-  ],
+  publisher: business.name,
+  keywords: [...seo.keywords],
   alternates: {
     canonical: "/",
+    languages: {
+      "en-IN": "/",
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
     siteName: business.name,
-    title: business.name,
-    description: business.taglines.hero,
+    title: seo.ogTitle,
+    description: seo.ogDescription,
     images: [
+      {
+        url: "/brand/hero.jpg",
+        width: 1600,
+        height: 900,
+        alt: "Doorstep appliance service — washing machine, refrigerator and dishwasher",
+      },
       {
         url: "/brand/og.png",
         width: 1200,
@@ -68,19 +71,30 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: business.name,
-    description: business.taglines.hero,
-    images: ["/brand/og.png"],
+    title: seo.ogTitle,
+    description: seo.ogDescription,
+    images: ["/brand/hero.jpg"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   category: "home services",
+  other: {
+    "geo.region": "IN-TN",
+    "geo.placename": "Avadi, Chennai",
+  },
 };
 
 export const viewport: Viewport = {
@@ -94,7 +108,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       className={`${michroma.variable} ${barlow.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">

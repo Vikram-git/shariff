@@ -72,7 +72,7 @@ export function HeroVisual() {
       >
         <Image
           src="/brand/hero.jpg"
-          alt=""
+          alt="Appliance service in Avadi — washing machine, refrigerator and dishwasher"
           fill
           priority
           className="object-cover object-center"

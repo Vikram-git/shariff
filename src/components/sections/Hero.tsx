@@ -23,10 +23,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Screen-reader text for the decorative image */}
-      <span className="sr-only">
-        Washing machine, refrigerator and dishwasher
-      </span>
     </section>
   );
 }

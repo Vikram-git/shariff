@@ -1,13 +1,27 @@
-import { localBusinessJsonLd } from "@/lib/jsonld";
+import {
+  breadcrumbJsonLd,
+  faqPageJsonLd,
+  localBusinessJsonLd,
+  websiteJsonLd,
+} from "@/lib/jsonld";
+import { getSiteUrl } from "@/lib/site-url";
 
 export function JsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-  const data = localBusinessJsonLd(siteUrl);
+  const siteUrl = getSiteUrl();
+  const graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      localBusinessJsonLd(siteUrl),
+      websiteJsonLd(siteUrl),
+      faqPageJsonLd(siteUrl),
+      breadcrumbJsonLd(siteUrl),
+    ],
+  };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
     />
   );
 }
