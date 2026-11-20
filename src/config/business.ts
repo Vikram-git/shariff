@@ -22,8 +22,8 @@ export const business = {
   gst: null as null,
   visitingChargeInr: 200,
   taglines: {
-    hero: "Expert Care for Every Home Appliance.",
-    heroSub: "Fast Fixes. Genuine Parts. Lasting Comfort.",
+    hero: "Expert care for every home appliance",
+    heroSub: "Fast fixes at your doorstep",
     services: "Your Home Appliances, Running Like New.",
     booking: "Trusted Doorstep Repairs You Can Count On.",
   },

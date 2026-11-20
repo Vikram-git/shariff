@@ -1,25 +1,27 @@
 /**
- * Brand colour tokens — soft pastel greens (not neon).
+ * Brand colour tokens — soft pastel greens on a light page.
  * The only non-brand colour is --alert (form errors).
  */
 
 :root {
-  --ink-950: #050809;
-  --ink-900: #0a0e0f;
-  --ink-800: #0f1517;
-  --ink-700: #1b2225;
-  --slate-600: #2c3640;
+  /* Surfaces (light) — ink-* used as page/card fills in components */
+  --ink-950: #0a0e0f; /* deep ink for text on lime controls */
+  --ink-900: #ffffff;
+  --ink-800: #f3f7ef;
+  --ink-700: #d9e6ce;
+  --slate-600: #a7b89c;
 
   /* Pastel green scale */
   --lime-200: #e4f2d4;
   --lime-300: #cfe5b8;
-  --lime-400: #b4d49a;
-  --lime-500: #95bc7a;
-  --emerald-400: #a3c9b0;
+  --lime-400: #9fc483;
+  --lime-500: #7fad62;
+  --emerald-400: #8fb89c;
 
-  --silver-100: #f1f3f2;
-  --silver-300: #cfcace;
-  --silver-500: #9d9ea2;
+  /* Text on light (silver-* kept as text ramp) */
+  --silver-100: #0a0e0f;
+  --silver-300: #2c3640;
+  --silver-500: #5c6b63;
   --mint-50: #eaf6e8;
 
   --alert: #ff6b5e;
@@ -31,9 +33,10 @@
   --font-body: var(--font-barlow), ui-sans-serif, system-ui, sans-serif;
 
   --gradient-page: radial-gradient(
-    60% 50% at 20% 0%,
-    var(--slate-600) 0%,
-    var(--ink-900) 62%
+    70% 55% at 50% -10%,
+    var(--lime-200) 0%,
+    var(--mint-50) 42%,
+    #f7faf4 100%
   );
-  --gradient-wordmark: linear-gradient(180deg, var(--lime-300), var(--lime-500));
+  --gradient-wordmark: linear-gradient(180deg, var(--lime-500), var(--lime-400));
 }

@@ -37,7 +37,7 @@
     min-height: 100%;
     min-height: 100dvh;
     overflow-x: hidden;
-    background-color: var(--ink-950);
+    background-color: var(--mint-50);
     background-image: var(--gradient-page);
     background-attachment: scroll;
     color: var(--silver-100);
@@ -84,8 +84,8 @@
   }
 
   ::selection {
-    background: color-mix(in srgb, var(--lime-400) 35%, transparent);
-    color: var(--silver-100);
+    background: color-mix(in srgb, var(--lime-400) 45%, transparent);
+    color: var(--ink-950);
   }
 }
 

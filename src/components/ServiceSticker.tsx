@@ -26,7 +26,7 @@ export function ServiceSticker({
 }: ServiceStickerProps) {
   return (
     <aside
-      className={`relative mx-auto w-full max-w-sm origin-center rounded-[var(--radius-sticker)] border border-slate-600 bg-ink-800 px-4 pb-5 pt-6 text-left shadow-none sm:mx-0 sm:-rotate-[1.5deg] sm:px-5 ${className}`}
+      className={`relative mx-auto w-full max-w-sm origin-center rounded-[var(--radius-sticker)] border border-ink-700 bg-ink-900 px-4 pb-5 pt-6 text-left shadow-none sm:mx-0 sm:-rotate-[1.5deg] sm:px-5 ${className}`}
       aria-label={title}
     >
       {/* Punched hole */}

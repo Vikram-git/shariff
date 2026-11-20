@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
 const controlClass =
-  "min-h-12 w-full rounded-[var(--radius-control)] border border-ink-700 bg-ink-700 px-3 text-[1rem] text-silver-100 placeholder:text-silver-500 focus-visible:border-lime-400 sm:min-h-11";
+  "min-h-12 w-full rounded-[var(--radius-control)] border border-ink-700 bg-ink-900 px-3 text-[1rem] text-silver-100 placeholder:text-silver-500 focus-visible:border-lime-400 sm:min-h-11";
 
 export function Field({
   label,

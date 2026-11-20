@@ -4,7 +4,7 @@ import { business } from "@/config/business";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto border-t border-ink-700 bg-ink-950 pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
+    <footer className="mt-auto border-t border-ink-700 bg-ink-800 pb-[calc(4.5rem+env(safe-area-inset-bottom))] md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:grid-cols-2 sm:gap-8 sm:px-6 sm:py-10 lg:grid-cols-3">
         <div>
           <Image
