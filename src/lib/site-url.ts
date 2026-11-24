@@ -14,5 +14,5 @@ export function getSiteUrl(): string {
     return `https://${host}`;
   }
 
-  return "https://shariff-phi.vercel.app";
+  return "https://shariffappliances.in";
 }
